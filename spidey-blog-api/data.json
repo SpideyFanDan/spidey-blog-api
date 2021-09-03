@@ -1,0 +1,10 @@
+[
+	{
+		"id": "1",
+		"title": "My first blog post from my API",
+		"content":
+			"This is the first time I've attempted to make an api for my blog portion of my website and portfolio. So, this just works as a test to see if it works",
+		"post-image": "uploads/post-image-1.jpg",
+		"date_added": "1"
+	}
+]
