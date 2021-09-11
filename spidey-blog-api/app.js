@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
-const Post = require('./api/models/posts');
+const Post = require('./api/models/post');
 const postsData = new Post();
 const multer = require('multer');
 const storage = multer.diskStorage({
 	destination: function (req, file, cb) {
-		cb(null, '/uploads');
+		cb(null, './uploads/');
 	},
 	filename: function (req, file, cb) {
 		cb(null, `${file.fieldname}-${Date.now()}${getExt(file.mimeType)}`);
@@ -49,7 +49,7 @@ app.post('/api/posts', upload.single('image'), (req, res) => {
 		date_added: req.body['date_added'],
 	};
 	postsData.add(newPost);
-	res.status(200).send(newPost);
+	res.status(201).send(newPost);
 });
 
 app.listen(3000, () => console.log('Listening on http://localhost:3000'));
